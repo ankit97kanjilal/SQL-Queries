@@ -1,0 +1,92 @@
+Data----grouped into record---------> ecode,ename,salary
+similar types of records are grouped into table
+
+	101,AAA,1111,201
+	102,BBB,2222,202
+
+
+tables are grouped into database ( employee,department, manager, account etc)
+DBMS-----> sw to manage database
+
+RDBMS----> Relational Database Management System
+
+-Tables
+-Procedures
+-Functions
+-Indexes
+-Trigger
+-Cursor
+
+
+Group by clause:
+select deptid, sum(salary) as TotalSalary, ------2
+MAX(salary) as MaxSalary,
+Min(salary) as MinSalary,
+Avg(isnull(salary,0)) as AvgSalary,
+COUNT(isnull(salary,0)) as TotalNoOfEmps 
+from employee
+group by deptid---------1
+--having avg(salary)>3000-------3
+order by avg(isnull(salary,0))-------4
+
+
+Note : sequence is important in the group by queries
+
+
+
+
+Design table aspects:-
+
+Entities and Relations will decide what are the tables we can have in database.
+
+degree of relation:- number of entities involved in a relation
+unary : only one entity is involved in a relation
+binary: two entities are involved in a relation
+ternary: 3 or above entities are involved in a relation
+
+
+
+
+cardinality ratio:-
+
+1:1
+1:m
+m:n
+m:1
+
+
+Process of reducting the redundancy in your database is called NORMALIZATION
+1NF : there is no repeatition of similar group of data in table
+2NF : partial dependency is removed
+3NF : transitive dependency is removed   A->B->C  then A->C
+
+
+=================Contraints=======================
+Rules and restrictions on data in database is done by these constraints so that correct data will be present in database at any point of time.
+Types of constraints:-
+1) PRIMARY KEY:- this is to make the record unique in the table
+syntax:-
+	create table employe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
