@@ -44,3 +44,9 @@ select avg(Exam_score) from Exam_Results group by(EXAM_ID) having EXAM_ID=1
 select count(STUDENT_ID) as [Number of Students],EXAM_ID from Exam_Results group by(EXAM_ID)
 --3. SQL statement to find the maximum score of EXAM_ID=1 and FIRST_NAME has the letter “E”.
 select Min(Exam_score) from Exam_Results where FIRST_NAME like '%E%' group by(EXAM_ID) having EXAM_ID=1
+--  4. SQL statement to find the maximum EXAM_SCORE for EXAM_ID=1 which is greater than the average   
+	--marks of that EXAM_ID. For e.g. for EXAM_ID=1 available scores are 90,78,95,70 whose average is  
+	--(90+78+95+70)/4=83.25. So records selected will be 90 and 95 as both are >83.25. Out of these two 
+	--95 is the final score as it is maximum
+select Max(Exam_score) from Exam_Results where Exam_id=1 and 
+	Exam_score>(select Avg(EXAM_SCORE) from Exam_Results group by(EXAM_ID) having EXAM_ID=1)
