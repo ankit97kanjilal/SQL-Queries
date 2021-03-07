@@ -222,3 +222,15 @@ select * from employee full outer join department
 
 --Self Join:-a special case of inner join when a table is joined with itself
 --String pattern comparison.... =====Like operator... '%s%s%es' -- contains two ss, and end with es
+
+select * from employee
+
+create view emp_v1 as
+	select ecode,ename
+	from employee
+
+select * from emp_v1
+
+--DML thru views
+insert into emp_v1 values(108,'Ramnath')
+select * from employee
